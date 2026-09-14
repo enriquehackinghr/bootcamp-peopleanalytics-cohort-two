@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@source "../app/**/*.{js,ts,jsx,tsx}";
+@source "../components/**/*.{js,ts,jsx,tsx}";
+
+:root {
+  --halstead-teal: #0d6e6e;
+  --halstead-teal-dark: #084848;
+  --halstead-mint: #e8f6f4;
+  --halstead-amber: #c47a2c;
+  --halstead-cream: #faf7f2;
+  --halstead-forest: #0a3d3c;
+  --background: #faf7f2;
+  --foreground: #1a2e2e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-halstead-teal: var(--halstead-teal);
+  --color-halstead-teal-dark: var(--halstead-teal-dark);
+  --color-halstead-mint: var(--halstead-mint);
+  --color-halstead-amber: var(--halstead-amber);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-fraunces);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+.landing-hero-overlay {
+  background: linear-gradient(
+    115deg,
+    rgba(8, 72, 72, 0.93) 0%,
+    rgba(13, 110, 110, 0.82) 45%,
+    rgba(10, 61, 60, 0.88) 100%
+  );
+}
