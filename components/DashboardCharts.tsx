@@ -18,6 +18,19 @@ const teal = "#0d6e6e";
 const tealLight = "#3a9a9a";
 const amber = "#c47a2c";
 
+const locationColors = [
+  "#0d6e6e",
+  "#2563eb",
+  "#c47a2c",
+  "#7c3aed",
+  "#059669",
+  "#db2777",
+  "#0891b2",
+  "#ea580c",
+  "#4f46e5",
+  "#64748b",
+];
+
 function engagementColor(score: number) {
   if (score >= 80) return teal;
   if (score >= 70) return tealLight;
@@ -44,7 +57,14 @@ export function HeadcountChart({
         <Tooltip
           formatter={(value: number) => [`${value} employees`, "Headcount"]}
         />
-        <Bar dataKey="headcount" fill={teal} radius={[0, 4, 4, 0]} />
+        <Bar dataKey="headcount" radius={[0, 4, 4, 0]}>
+          {data.map((entry, index) => (
+            <Cell
+              key={entry.location}
+              fill={locationColors[index % locationColors.length]}
+            />
+          ))}
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );
