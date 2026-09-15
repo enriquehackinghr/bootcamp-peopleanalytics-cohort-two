@@ -38,8 +38,8 @@ body {
 .landing-hero-overlay {
   background: linear-gradient(
     115deg,
-    rgba(8, 72, 72, 0.93) 0%,
-    rgba(13, 110, 110, 0.82) 45%,
-    rgba(10, 61, 60, 0.88) 100%
+    rgba(21, 19, 25, 0.92) 0%,
+    rgba(87, 55, 114, 0.84) 55%,
+    rgba(21, 19, 25, 0.9) 100%
   );
 }
