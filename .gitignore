@@ -26,3 +26,6 @@ next-env.d.ts
 
 # local bootcamp extract (not part of app)
 /_halstead_data/
+
+# assigned data permissions (local admin store)
+/data/permissions.json

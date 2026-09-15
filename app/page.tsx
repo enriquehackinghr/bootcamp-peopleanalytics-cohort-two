@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AuthControls } from "@/components/AuthControls";
 import { DashboardLink } from "@/components/DashboardLink";
 import { PetImage } from "@/components/PetImage";
 import { company } from "@/lib/halstead-metrics";
@@ -17,7 +18,7 @@ const clinics = [
   "Surrey",
 ];
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="min-h-screen bg-[#faf8f4] text-[#151319]">
       <div className="bg-[#151319] px-4 py-2 text-center text-xs font-medium tracking-wide text-[#ffffff]">
@@ -57,7 +58,10 @@ export default function Home() {
               People analytics
             </a>
           </nav>
-          <DashboardLink variant="nav">Dashboard</DashboardLink>
+          <div className="flex items-center gap-3">
+            <AuthControls />
+            <DashboardLink variant="nav">Dashboard</DashboardLink>
+          </div>
         </div>
       </header>
 

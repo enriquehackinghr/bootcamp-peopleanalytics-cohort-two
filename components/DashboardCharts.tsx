@@ -113,6 +113,32 @@ export function WorkforcePlanChart({
   );
 }
 
+export function PerformanceChart({
+  data,
+}: {
+  data: { function: string; meanRating: number; headcount: number }[];
+}) {
+  const sorted = [...data].sort((a, b) => b.meanRating - a.meanRating);
+  return (
+    <ResponsiveContainer width="100%" height={320}>
+      <BarChart data={sorted} layout="vertical" margin={{ left: 8, right: 16 }}>
+        <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+        <XAxis type="number" domain={[0, 4]} />
+        <YAxis
+          type="category"
+          dataKey="function"
+          width={140}
+          tick={{ fontSize: 11 }}
+        />
+        <Tooltip
+          formatter={(value: number) => [value.toFixed(2), "Mean rating"]}
+        />
+        <Bar dataKey="meanRating" fill={teal} radius={[0, 4, 4, 0]} />
+      </BarChart>
+    </ResponsiveContainer>
+  );
+}
+
 export function PeopleSpendChart({
   learning,
   recruiting,
